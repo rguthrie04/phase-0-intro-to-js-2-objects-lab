@@ -1,30 +1,25 @@
 const employee = {
-    name:'Ryan',
-    streetAddress: '2020 Kimbrook'
-};
-
-function updateEmployeeWithKeyAndValue() {
-    const updateEmployee = { ...employee };
-
-updateEmployee.name = 'Sam';
-updateEmployee.streetAddress = '11 Broadway';
-return updateEmployee;
+    name: 'Ryan',
+    address: 'North Lodge Cottage'
 }
-
-function destructivelyUpdateEmployeeWithKeyAndValue() {
+function updateEmployeeWithKeyAndValue(employee, key, value) {
+    let updateEmployee = { ...employee };
+    updateEmployee.name = 'Sam';
+    updateEmployee.streetAddress = '11 Broadway';
+    return updateEmployee
+}
+function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value){
     employee.name = 'Sam';
     employee.streetAddress = '12 Broadway';
-    return employee;
+    return employee
 }
-
-function deleteFromEmployeeByKey() {
-    const newEmployee = {...employee}
+function deleteFromEmployeeByKey(employee, key) {
+    let newEmployee = {...employee}
     delete newEmployee.name
     return newEmployee
 }
-
-function destructivelyDeleteFromEmployeeByKey() {
-    const newEmployee = employee;
-    delete newEmployee.name;
-    return newEmployee;
+function destructivelyDeleteFromEmployeeByKey(employee, key) {
+    delete employee.name
+    delete employee.address
+    return employee
 }
